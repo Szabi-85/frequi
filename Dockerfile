@@ -18,5 +18,5 @@ RUN pnpm run build
 FROM nginx:1.27.5-alpine
 COPY  --from=ui-builder /app/dist /etc/nginx/html
 COPY  --from=ui-builder /app/nginx.conf /etc/nginx/nginx.conf
-EXPOSE 80
+EXPOSE 8081
 CMD ["nginx"]
